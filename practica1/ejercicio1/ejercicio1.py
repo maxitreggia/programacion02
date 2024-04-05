@@ -1,0 +1,5 @@
+print( "Hala", end = "@")
+print("Mundo")
+print( "Tengo una", "¿Quieres una" , "?", sep = "Manzana")
+print("Fundamentos","Programación","en",sep="***", end="...")
+print("Python")
