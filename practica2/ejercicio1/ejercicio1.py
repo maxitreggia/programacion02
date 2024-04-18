@@ -2,13 +2,20 @@
 # Finalizar la carga de enteros al ingresar el cero. Mostrar finalmente el tamaño de
 # la lista.
 
-while True:
-    n = int(input("Ingrese numeros enteros(ingrese 0 para finalizar): "))
-    numeros_enteros = []
-    for i in numeros_enteros:
-        if numeros_enteros[i] != 0:
-            numeros_enteros.append(n)
-        else:
-            break
+list_integers = []
 
-print(f"EL total de la lista es:{len(numeros_enteros)}")
+while True:
+    value = input("Ingrese numeros enteros(ingrese 0 para finalizar): ")
+
+    try:
+        number = int(value)
+    except ValueError:
+        print("Error: Ingrese solo numeros enteros")
+        continue
+
+    if number == 0:
+        break
+    list_integers.append(number)
+
+print(f"Lista de numeros: {list_integers}")
+print(f"Tamaño de la lista de numeros: {len(list_integers)}")
