@@ -2,15 +2,17 @@
 # la lista Mostrar ordenada e informar cuantos sueldos > 25000 hay. Usar el algoritmo de
 # ordenamiento.
 
-list_salary = [25000, 35000, 40000, 50000, 60000, 70000, 30000, 20000, 10000]
-
-long_list = len(list_salary)
+salary_count = int(input("ingrese la cantidad de salarios a analizar: "))
+list_salary = []
 salary_higher = 0
 
-for i in range(long_list):
+for i in range(salary_count):
+    list_salary.append(int(input(f"Ingrese el salario {i+1}/{salary_count}: ")))
     if list_salary[i] > 25000:
         salary_higher += 1
-    for j in range(long_list - 1 - i):
+
+for i in range(salary_count):
+    for j in range(salary_count - 1 - i):
         if list_salary[j] > list_salary[j+1]:
             aux = list_salary[j]
             list_salary[j] = list_salary[j+1]
