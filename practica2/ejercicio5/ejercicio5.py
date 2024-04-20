@@ -9,13 +9,12 @@ keep = ''
 for i in range(cities):
     list_cities.append(input(f"Ingrese la ciudad{i + 1}/{cities}: ").upper())
 
-
-print(f"La lista de ciudades es: {list_cities}")
-
 while keep != 'N':
-    search_cities = input("Ingrese una ciudad que desea buscar: ")
+    search_cities = input("Ingrese una ciudad que desea buscar: ").upper()
+
     if search_cities in list_cities:
-        print(f"La lista de ciudades es: {list_cities}")
+        postion = list_cities.index(search_cities) + 1
+        print(f"La ciudad {search_cities.capitalize()} se encuntra en la posicion {postion} de la lista")
     else:
-        print("La ciudad ingresada no se encuntra en la lista")
+        print("La ciudad no se encuentra en la lista")
     keep = input("Desea continuar? [S/N] ").upper()
