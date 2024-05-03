@@ -17,12 +17,15 @@ for i in range(count_of_candidates):
     name = input("Ingrese el nombre del candidato: ")
     total_votes = 0
     count_of_provinces = int(input("Ingrese la cantidad de provincias: "))
+    provinces_votes = []
     for j in range(count_of_provinces):
-        province_name = input("Ingrese el nombre del provincia: ")
-        votes = int(input("Ingrese la cantidad de votos: "))
-        list_candidates.append((name, [(province_name, votes)]))
+        province_name = input("Ingrese el nombre de la provincia: ")
+        votes = int(input(f"Ingrese la cantidad de votos para {province_name}: "))
+        provinces_votes.append((province_name, votes))
         total_votes += votes
-    print(f"El candidato {name} tiene {total_votes} votos.")
+    list_candidates.append((name, provinces_votes))
 
-for i in range(count_of_candidates):
-    print(f"El candidato {list_candidates[i]}, tuvo votos.")
+for candidate in list_candidates:
+    name = candidate[0]
+    total_votes = sum(votes for (_, votes) in candidate[1])
+    print(f"El candidato {name} tiene {total_votes} votos en total.")
