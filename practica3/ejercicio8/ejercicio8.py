@@ -4,8 +4,6 @@
 
 import re
 
-text_to_separate = (str(input("Ingrese un texto: ")))
-
 
 def clean_spaces(text):
     text = text.strip()
@@ -23,4 +21,5 @@ def len_last_word(text):
     return len(text[-1])
 
 
+text_to_separate = (str(input("Ingrese un texto: ")))
 print(f"La ultima palabra tiene {len_last_word(text_to_separate)} caracteres")

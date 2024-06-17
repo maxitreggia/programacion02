@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones</title>
+</head>
+<body>
+    <h1>Funciones en Python</h1>
+
+    <h2>Definición de Funciones</h2>
+    <p>
+        Las funciones en Python se definen utilizando la palabra clave <code>def</code> seguida del nombre de la función y los parámetros entre paréntesis.
+    </p>
+    <pre><code>
+# Ejemplo de definición de función
+def saludar(nombre):
+    return f'Hola, {nombre}!'
+    </code></pre>
+
+    <h2>Llamada a Funciones</h2>
+    <p>
+        Para llamar a una función y ejecutar su código, simplemente se utiliza el nombre de la función seguido de los paréntesis con los argumentos (si los hay).
+    </p>
+    <pre><code>
+# Ejemplo de llamada a función
+mensaje = saludar('Juan')
+print(mensaje)  # Salida: Hola, Juan!
+    </code></pre>
+
+    <h2>Parámetros y Argumentos</h2>
+    <p>
+        Las funciones pueden aceptar parámetros (valores que la función espera recibir) y estos pueden tener valores por defecto.
+    </p>
+    <pre><code>
+# Ejemplo de función con parámetro opcional
+def calcular_area(base, altura=1):
+    return base * altura
+
+area_rectangulo = calcular_area(5, 3)  # Se pasa altura como argumento
+area_cuadrado = calcular_area(4)      # altura toma el valor por defecto
+    </code></pre>
+
+    <h2>Retorno de Valores</h2>
+    <p>
+        Las funciones pueden retornar valores utilizando la palabra clave <code>return</code>.
+    </p>
+    <pre><code>
+# Ejemplo de función que retorna múltiples valores
+def calcular_area_perimetro(lado):
+    area = lado ** 2
+    perimetro = lado * 4
+    return area, perimetro
+
+area, perimetro = calcular_area_perimetro(5)
+    </code></pre>
+
+    <h2>Funciones Recursivas</h2>
+    <p>
+        Las funciones en Python pueden llamarse a sí mismas, lo que se conoce como recursión.
+    </p>
+    <pre><code>
+# Ejemplo de función recursiva para calcular factorial
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * factorial(n - 1)
+    </code></pre>
+
+</body>
+</html>
