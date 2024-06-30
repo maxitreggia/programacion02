@@ -1,5 +1,6 @@
 def calcular_imc(peso: float, altura: float) -> float:
-    return peso / altura ** 2
+    imc = peso / altura ** 2
+    return round(imc, 2)
 
 
 def calcular_porcentaje_grasa(peso: float, altura: float, edad: int, valor_genero: float) -> float:
@@ -8,7 +9,7 @@ def calcular_porcentaje_grasa(peso: float, altura: float, edad: int, valor_gener
 
 
 def calcular_calorias_en_reposo(peso: float, altura: float, edad: int, valor_genero: float) -> float:
-    altura_cm = altura * 100  # Convertir altura de metros a centímetros
+    altura_cm = altura * 100
     return (10 * peso) + (6.25 * altura_cm) - (5 * edad) + valor_genero
 
 
