@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Búsqueda de Productos</title>
+</head>
+<body>
+    <h1>Búsqueda de Productos</h1>
+    <form method="POST" action="/buscar">
+        <label for="keyword">Buscar Producto:</label>
+        <input type="text" id="keyword" name="keyword" required>
+        <input type="submit" value="Search">
+    </form>
+
+    {% if keyword %}
+    <h2>Resultados para: "{{ keyword }}"</h2>
+    {% if results %}
+        <ul>
+        {% for product in results %}
+            <li>{{ product.name }} - ${{ product.price | round(2) }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No se encontraron productos que coincidan con "{{ keyword }}".</p>
+    {% endif %}
+    {% endif %}
+</body>
+</html>
+
